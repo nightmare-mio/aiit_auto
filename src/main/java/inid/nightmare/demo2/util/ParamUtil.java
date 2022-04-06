@@ -17,9 +17,7 @@ public class ParamUtil {
     
     // 官网获取的 Secret Key 更新为你注册的
     public static String clientSecret;
-
-    //以上四个属于环境变量 
-
+    
     // 登入url
     public static String login_url="http://aiit.iflysse.com/Handler/Login/LoginHandler.ashx";
 

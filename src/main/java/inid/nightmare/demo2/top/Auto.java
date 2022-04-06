@@ -20,23 +20,10 @@ public class Auto {
      * @param args
      */
     private void setParameter(String args[]) {
-          //设置代理，使fiddler能够抓取到
-          System.setProperty("http.proxySet", "true");
- 
-          System.setProperty("http.proxyHost", "127.0.0.1");
-  
-          System.setProperty("http.proxyPort", "8888");
-      
-          
-          user.setUsername("332501200009255316");
-          user.setPassword(Base64Util.encode("wang5210".getBytes()));
-          
-          // ParamUtil.userName=args[0];
-          // ParamUtil.psd=Base64Util.encode(args[1].getBytes());
-          // ParamUtil.clientId=args[2];
-
-          ParamUtil.clientId="M9woqE3Fo563VA3WYKxiSL1S";
-          ParamUtil.clientSecret="uZOkXntG72jCPVWilMec81ZK4WGrGP7Z";
+        user.setUsername(args[0]);
+        user.setPassword(Base64Util.encode(args[1].getBytes()));
+        ParamUtil.clientId=args[2];
+        ParamUtil.clientSecret=args[3];
     }
 
 

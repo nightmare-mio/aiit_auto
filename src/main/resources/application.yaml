@@ -1,0 +1,12 @@
+
+logging:
+  file:
+    path: ./log
+    name: logging.log
+    max-history: 30
+    max-size: 1024MB
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n"
+  level:
+    root: info

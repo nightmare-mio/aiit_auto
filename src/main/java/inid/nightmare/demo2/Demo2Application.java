@@ -1,0 +1,17 @@
+package inid.nightmare.demo2;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import inid.nightmare.demo2.top.Auto;
+
+@SpringBootApplication
+public class Demo2Application {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Demo2Application.class, args);
+		Auto auto=new Auto();
+		auto.autoStart(args);
+	}
+
+}

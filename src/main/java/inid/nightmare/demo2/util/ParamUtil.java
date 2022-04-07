@@ -25,22 +25,25 @@ public class ParamUtil {
 
     public static String login_cookie1="http://aiit.iflysse.com/Login_aiit.aspx";
 
-    // 登入验证码url
     public static String login_code="http://aiit.iflysse.com/Pages/CheckCode.aspx";
     
-    public static String sign_url="http://aiit.iflysse.com/java-api/excitation/sign/sign";
+    // 签到
+    public static String sign_url="http://aiit.iflysse.com/net-api/excitation/sign/sign";
 
+
+    // 兑换
     public static String exchange_url="http://aiit.iflysse.com/Handler/Shop/ShopWriteSession.ashx";
 
-    //兑换验证码url
     public static String exchange_code="http://aiit.iflysse.com/Pages/Shop/CheckCodeForExchange.aspx?ID=9885032b-40a5-41d0-914a-ee6b2cebb7c4&r=10";
    
+    public static String exchange_ID="9885032b-40a5-41d0-914a-ee6b2cebb7c4";
+   
+    // 抽奖
     public static String draw_card="http://aiit.iflysse.com/net-api/excitation/bosicard/getEquityCardNumAndDrawId";
 
     public static String draw_url="http://aiit.iflysse.com/Handler/Shop/LotteryDraw.ashx";
 
     //抽奖卡id
-    public static String exchange_ID="9885032b-40a5-41d0-914a-ee6b2cebb7c4";
 
     // 最大登入次数
     public static int flag=2;

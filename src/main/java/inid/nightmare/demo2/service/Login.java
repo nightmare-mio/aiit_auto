@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -64,10 +63,10 @@ public class Login {
 
         // 登入是否成功
         if (msg.toString().contains("验证码错误")) {
-            logger.error("date:{},error:{}",new Date(),"CodeError");
+            logger.error("error:{}","CodeError");
             return false;
         } else if(msg.toString().contains("账号或密码错误")){
-            logger.error("date:{},error:{}",new Date(),"AccountOrPasswordError");
+            logger.error("error:{}","AccountOrPasswordError");
             return false;
         }else {
             String delay;
@@ -76,8 +75,7 @@ public class Login {
         
             delay=list.get(1);
             user.setCacheHeader(delay.substring(delay.indexOf("=")+1, delay.indexOf(";")));
-            logger.info("date:{},SessionId:{},CacheHeader:{}",
-            new Date(),
+            logger.info("SessionId:{},CacheHeader:{}",
             user.getSessionId(),
             user.getCacheHeader());
             
@@ -99,10 +97,7 @@ public class Login {
         conn.setRequestProperty("Cookie", cookie);
 
         // 正文 此处验证码经常出错
-
-        String pCode = code.getCode(ParamUtil.login_code);
-        logger.info("date:{},code:{}", new Date(),pCode);
-        param="action=0&code="+pCode+
+        param="action=0&code="+code.getCode(ParamUtil.login_code)+
                                 "&name="+username+"&password="+psd+"&isremember=false";
     }
 }

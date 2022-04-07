@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.util.Date;
 
 import javax.script.ScriptException;
 
@@ -25,7 +24,7 @@ param           正文
 
 public class Exchange extends Thread {
     private static HttpURLConnection conn;
-    private static final Logger Logger=LoggerFactory.getLogger(Exchange.class);
+    private static final Logger logger=LoggerFactory.getLogger(Exchange.class);
     private String param="";
 
     private UserBean user=UserBean.initUser();
@@ -57,10 +56,10 @@ public class Exchange extends Thread {
             return false;
         }else{
             if (msg.indexOf("您今日购买次数已超过限购数量")!=-1) {
-                Logger.info("date:{},status:{}",new Date(),"兑换成功");
-            }else
-
-            Logger.info("date:{},status:{}",new Date(),"兑换成功");
+                logger.info("status:{}","兑换失败");
+            }else{
+                logger.info("status:{}","兑换成功");
+            }
             return true;
         }
 
@@ -77,12 +76,14 @@ public class Exchange extends Thread {
         }
         super.run();
         try {
+            logger.info("status:{}","兑换开始");
             while (exchange()==false) {
                 if (ParamUtil.max_count--<0) {
-                    Logger.info("Error:{}","超过最大验证次数");
+                    logger.info("Error:{}","超过最大验证次数");
                     break;
                 }
             }
+            logger.info("status:{}","兑换结束");
         } catch (IOException | ScriptException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

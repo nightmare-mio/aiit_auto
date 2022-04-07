@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.util.Date;
 import java.util.Map;
 
 import com.google.gson.Gson;
@@ -50,8 +49,7 @@ public class Cookie {
         try {
             this.ASP=this.getCookie_asp();
             this.iflysse_client_sign=this.getCookie_sign();
-            logger.info("date:{},ASP.NET_SessionId:{},iflysse_client_sign:{}",
-            new Date(),
+            logger.info("ASP.NET_SessionId:{},iflysse_client_sign:{}",
             this.ASP,
             this.iflysse_client_sign);
         

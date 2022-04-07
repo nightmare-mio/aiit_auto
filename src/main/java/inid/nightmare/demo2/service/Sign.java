@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
-import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +30,7 @@ public class Sign extends Thread{
     //签到
 
     private void sign() throws IOException {
-        conn=GetHeaderUtil.get(ParamUtil.sign_url, "POST");
+        conn=GetHeaderUtil.get(ParamUtil.sign_url, "GET");
         setCookieAndParam();
         
         String ch="";
@@ -47,8 +46,9 @@ public class Sign extends Thread{
     public void run() {
         super.run();
         try {
+            logger.info("status:{}","签到开始");
             sign();
-            logger.info("date:{},msg:{},status:{}",new Date(),msg.toString(),"签到结束");
+            logger.info("msg:{},status:{}",msg.toString(),"签到结束");
         } catch (IOException e) {
             e.printStackTrace();
             logger.error("Cause:{},StackTrace:{}",

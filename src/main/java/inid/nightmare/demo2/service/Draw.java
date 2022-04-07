@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.util.Date;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -24,7 +23,7 @@ param           正文
 
 
 public class Draw extends Thread{
-    private static final Logger Logger =LoggerFactory.getLogger(Draw.class);
+    private static final Logger logger =LoggerFactory.getLogger(Draw.class);
     private static HttpURLConnection conn;
     private String param="";
     
@@ -52,11 +51,12 @@ public class Draw extends Thread{
     @Override
     public void run() {
         try {
+            logger.info("status:{}","抽奖开始");
             LuckDrawCar luckDrawCar=new LuckDrawCar();
             while(luckDrawCar.getLuckCar()!=0){
                 draw();
             }
-            Logger.info("date:{},status:{}",new Date(),"抽奖结束");
+            logger.info("status:{}","抽奖结束");
         } catch (IOException e) {
             e.printStackTrace();
         }

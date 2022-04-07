@@ -4,7 +4,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.util.Date;
 
 import javax.script.ScriptException;
 
@@ -91,10 +90,14 @@ public class Code {
         ResultBean resultBean=new Gson().fromJson(SetCode.setCode(filePath), ResultBean.class);
         //取得string验证码
         try {
-            logger.info("date:{},msg:{}",new Date(),resultBean.getWords_result().get(0).getWords().replace(" ", ""));
-            return Calculation.jisuan(resultBean.getWords_result().get(0).getWords().replace(" ", ""));
+            String result = Calculation.jisuan(resultBean.getWords_result().get(0).getWords().replace(" ", ""));
+            logger.info("msg:{}",resultBean.getWords_result().get(0).getWords().replace(" ", "")+
+                "=="+
+                result
+                );
+            return result;
         } catch (IndexOutOfBoundsException e) {
-            logger.error("date:{},Cause:{}", new Date(),e.getCause());
+            logger.error("Cause:{}",e.getCause());
             return null;
         }
     }

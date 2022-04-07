@@ -27,11 +27,9 @@ public class Calculation {
             if (msg.indexOf("/")!=-1) {
                 pi=Integer.parseInt(msg.substring(0,msg.indexOf("/")));
                 pi/= Integer.parseInt(msg.substring(msg.indexOf("/")+1));
-                System.out.println("asnwer="+pi);
                 answeString=pi+"";
             }else{
                 answeString=anwser.eval(msg)+"";
-                System.out.println("asnwer="+answeString);
             }     
         }else{
             answeString=msg;

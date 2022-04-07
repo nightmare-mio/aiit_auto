@@ -37,8 +37,8 @@ jobs:
 
       - name: Show Ls
         run: ls
-          cd target
-          ls
+        run: cd target
+        run: ls
 
       - name: run Auto
         env: 

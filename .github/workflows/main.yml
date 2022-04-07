@@ -35,12 +35,15 @@ jobs:
       - name: Build with Maven
         run: mvn -B package --file pom.xml
 
-      - name: run Auto
-        env: 
-          username: ${{ secrets.username }}
-          psd: ${{ secrets.psd }}
-          clientId: ${{ secrets.clientId }}
-          clientSecret: ${{ secrets.clientSecret }}
-        run: |
-          mvn compile exec:java -Dexec.mainClass="Auto" -Dexec.args="${username} ${psd} ${clientId} ${clientSecret}"
+      - name: Show Ls
+        run: ls
+
+      # - name: run Auto
+      #   env: 
+      #     username: ${{ secrets.username }}
+      #     psd: ${{ secrets.psd }}
+      #     clientId: ${{ secrets.clientId }}
+      #     clientSecret: ${{ secrets.clientSecret }}
+      #   run: |
+      #     mvn compile exec:java -Dexec.mainClass="Auto" -Dexec.args="${username} ${psd} ${clientId} ${clientSecret}"
       

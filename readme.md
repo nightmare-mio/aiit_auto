@@ -49,4 +49,4 @@
 ![](https://s3.bmp.ovh/imgs/2021/09/7728e9ea68ee48a3.png)
 
 
-本仓库涉及知识:httpurlconnection类，json序列化与反序列化，api的使用，javaWeb，fiddler，git，workflow，markdown,maven
+本仓库涉及知识:httpurlconnection类，json序列化与反序列化，api的使用，springboot，fiddler，git，workflow，markdown,maven

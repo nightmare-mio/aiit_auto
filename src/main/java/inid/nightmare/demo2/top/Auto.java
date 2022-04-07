@@ -24,12 +24,6 @@ public class Auto {
         user.setPassword(Base64Util.encode(args[1].getBytes()));
         ParamUtil.clientId=args[2];
         ParamUtil.clientSecret=args[3];
-    
-        System.out.println("ParamUtil.clientId="+ParamUtil.clientId);
-        System.out.println("ParamUtil.clientSecret="+ParamUtil.clientSecret);
-        
-        System.out.println("username="+user.getUsername());
-        System.out.println("password="+user.getPassword());
     }
 
 

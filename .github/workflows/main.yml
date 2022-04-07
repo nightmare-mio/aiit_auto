@@ -45,5 +45,5 @@ jobs:
           clientId: ${{ secrets.clientId }}
           clientSecret: ${{ secrets.clientSecret }}
         run: |
-          java -jar target\demo2-0.0.1-SNAPSHOT.jar --username=${username} --psd=${psd} --clientId=${clientId} --clientSecret=${clientSecret}
+          java -jar demo2-0.0.1-SNAPSHOT.jar --username=${username} --psd=${psd} --clientId=${clientId} --clientSecret=${clientSecret}
       
